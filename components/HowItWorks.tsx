@@ -1,37 +1,33 @@
-import { ArrowIcon, LinkIcon } from "./icons";
+"use client";
 
-const issues = [
+import { useState } from "react";
+import Image from "next/image";
+import { ArrowIcon } from "./icons";
+
+const slides = [
   {
-    severity: "CRITICAL",
-    form: "OREA 100",
-    icon: null,
-    title: "Irrevocability date precedes Offer Date.",
-    fix: "Ensure Irrevocability date/time is set to a future date/time relative to offer.",
+    src: "/ComplianceReportPic1.svg",
+    alt: "Compliance report showing flagged TRESA issues",
   },
   {
-    severity: "CRITICAL",
-    form: "APS + Schedule A",
-    icon: <LinkIcon className="h-3.5 w-3.5 text-navy" />,
-    title: "Buyer name inconsistency.",
-    fix: "Buyer name on Schedule A must match APS exactly (John Doe vs J. Doe).",
+    src: "/UploadPic2.svg",
+    alt: "Uploading a transaction form to Verafy",
   },
   {
-    severity: "ADVISORY",
-    form: "Form 801",
-    icon: null,
-    title: "Missing timestamp on acknowledgement.",
-    fix: "Add time of signature to ensure sequence clarity.",
+    src: "/VerafyCheckPic3.svg",
+    alt: "Verafy checking a form against every TRESA rule",
   },
   {
-    severity: "ADVISORY",
-    form: "OREA 320",
-    icon: null,
-    title: "Notice of fulfillment wording vague.",
-    fix: "Use standard OREA clauses for condition removal.",
+    src: "/getCorrectionPic4.svg",
+    alt: "Getting the recommended correction for a flagged issue",
   },
 ];
 
 export default function HowItWorks() {
+  const [index, setIndex] = useState(0);
+
+  const goTo = (i: number) => setIndex((i + slides.length) % slides.length);
+
   return (
     <section
       id="how-it-works"
@@ -51,57 +47,57 @@ export default function HowItWorks() {
         </p>
       </div>
 
-      <div className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-2xl border border-cream-border bg-white">
-        <div className="flex items-center justify-between border-b border-cream-border px-6 py-4">
-          <p className="text-sm font-medium text-text-dark">
-            Compliance Report
-          </p>
-          <p className="text-xs font-medium tracking-[0.1em] text-orange">
-            4 ISSUES
-          </p>
-        </div>
-        <div className="divide-y divide-cream-border">
-          {issues.map((issue, i) => (
-            <div key={i} className="flex gap-4 px-6 py-5 text-left">
-              <p
-                className={`w-20 shrink-0 text-xs font-medium tracking-[0.05em] ${
-                  issue.severity === "CRITICAL"
-                    ? "text-red-dot"
-                    : "text-orange"
-                }`}
+      <div className="mx-auto mt-12 w-full max-w-2xl overflow-hidden rounded-2xl border border-cream-border">
+        <div className="relative aspect-[569/504] w-full overflow-hidden">
+          <div
+            className="flex h-full transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {slides.map((slide) => (
+              <div
+                key={slide.src}
+                className="relative h-full w-full shrink-0"
               >
-                {issue.severity}
-              </p>
-              <div className="flex-1">
-                <div className="flex items-center gap-1.5">
-                  {issue.icon}
-                  <p className="text-xs font-medium tracking-[0.05em] text-text-gray">
-                    {issue.form}
-                  </p>
-                </div>
-                <p className="mt-1.5 text-sm font-medium text-text-dark">
-                  {issue.title}
-                </p>
-                <p className="mt-1 text-sm text-text-gray">
-                  Fix: {issue.fix}
-                </p>
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  className="object-contain"
+                />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="mt-8 flex justify-center gap-3">
+      <div className="mt-8 flex items-center justify-center gap-4">
         <button
           type="button"
           aria-label="Previous"
+          onClick={() => goTo(index - 1)}
           className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-border text-text-dark transition-colors hover:bg-cream-card"
         >
           <ArrowIcon direction="left" className="h-4 w-4" />
         </button>
+
+        <div className="flex gap-2">
+          {slides.map((slide, i) => (
+            <button
+              key={slide.src}
+              type="button"
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`h-1.5 w-1.5 rounded-full transition-colors ${
+                i === index ? "bg-orange" : "bg-cream-border"
+              }`}
+            />
+          ))}
+        </div>
+
         <button
           type="button"
           aria-label="Next"
+          onClick={() => goTo(index + 1)}
           className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-border text-text-dark transition-colors hover:bg-cream-card"
         >
           <ArrowIcon direction="right" className="h-4 w-4" />

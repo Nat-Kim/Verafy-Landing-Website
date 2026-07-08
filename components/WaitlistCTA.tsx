@@ -45,7 +45,7 @@ export default function WaitlistCTA() {
         <div className="mt-8 flex justify-center">
           <SubscribeForm
             role={role}
-            inputClassName="border border-white/0 bg-white text-text-dark placeholder:text-text-gray"
+            inputClassName="w-full flex-1 border border-white/0 bg-white text-text-dark placeholder:text-text-gray"
             buttonClassName="bg-ink text-white hover:bg-black"
           />
         </div>
