@@ -31,77 +31,80 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="flex flex-col justify-center bg-cream px-6 py-24 lg:min-h-[1045px]"
+      className="flex flex-col items-center justify-center bg-[#FBF8F5] px-6 py-24"
     >
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-xs font-medium tracking-[0.15em] text-orange">
-          HOW IT WORKS
-        </p>
-        <h2 className="mt-6 text-3xl font-medium tracking-tight text-text-dark sm:text-4xl">
-          Checked against every TRESA rule
-        </h2>
-        <p className="mt-4 text-base leading-7 text-text-gray">
-          Verafy reads every form in your transaction, spots any TRESA
-          issues, and tells you exactly what needs attention, turning hours
-          of manual review into five minutes.
-        </p>
-      </div>
+      <div className="mx-auto flex w-[790px] max-w-full flex-col items-center gap-12 lg:h-[814px]">
+        <div className="flex h-[162px] w-full flex-col items-center gap-4 text-center">
+          <p className="px-[52px] font-plex-mono text-[16px] font-medium leading-[120%] tracking-[0] text-[#EB712F]">
+            HOW IT WORKS
+          </p>
+          <h2 className="font-jakarta text-[48px] font-medium leading-[110%] tracking-[-0.06%] text-[#1C1714]">
+            Checked against every TRESA rule
+          </h2>
+          <p className="px-[52px] font-jakarta text-[18px] font-normal leading-[160%] tracking-[-0.03%] text-[#6B6058]">
+            Verafy reads every form in your transaction, spots any TRESA
+            issues, and tells you exactly what needs attention, turning hours
+            of manual review into five minutes.
+          </p>
+        </div>
 
-      <div className="mx-auto mt-12 w-full max-w-2xl overflow-hidden rounded-2xl border border-cream-border">
-        <div className="relative aspect-[569/504] w-full overflow-hidden">
-          <div
-            className="flex h-full transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${index * 100}%)` }}
-          >
-            {slides.map((slide) => (
+        <div className="flex w-[569px] max-w-full flex-col items-center gap-12 lg:h-[604px]">
+          <div className="w-full overflow-hidden rounded-2xl ">
+            <div className="relative aspect-[569/504] w-full overflow-hidden">
               <div
-                key={slide.src}
-                className="relative h-full w-full shrink-0"
+                className="flex h-full transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${index * 100}%)` }}
               >
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  className="object-contain"
-                />
+                {slides.map((slide) => (
+                  <div
+                    key={slide.src}
+                    className="relative h-full w-full shrink-0"
+                  >
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center gap-4">
+            <button
+              type="button"
+              aria-label="Previous"
+              onClick={() => goTo(index - 1)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-border text-text-dark transition-colors hover:bg-cream-card"
+            >
+              <ArrowIcon direction="left" className="h-4 w-4" />
+            </button>
+
+            <div className="flex gap-2">
+              {slides.map((slide, i) => (
+                <button
+                  key={slide.src}
+                  type="button"
+                  aria-label={`Go to slide ${i + 1}`}
+                  onClick={() => setIndex(i)}
+                  className={`h-1.5 w-1.5 rounded-full transition-colors ${i === index ? "bg-orange" : "bg-cream-border"
+                    }`}
+                />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              aria-label="Next"
+              onClick={() => goTo(index + 1)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-border text-text-dark transition-colors hover:bg-cream-card"
+            >
+              <ArrowIcon direction="right" className="h-4 w-4" />
+            </button>
           </div>
         </div>
-      </div>
-
-      <div className="mt-8 flex items-center justify-center gap-4">
-        <button
-          type="button"
-          aria-label="Previous"
-          onClick={() => goTo(index - 1)}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-border text-text-dark transition-colors hover:bg-cream-card"
-        >
-          <ArrowIcon direction="left" className="h-4 w-4" />
-        </button>
-
-        <div className="flex gap-2">
-          {slides.map((slide, i) => (
-            <button
-              key={slide.src}
-              type="button"
-              aria-label={`Go to slide ${i + 1}`}
-              onClick={() => setIndex(i)}
-              className={`h-1.5 w-1.5 rounded-full transition-colors ${
-                i === index ? "bg-orange" : "bg-cream-border"
-              }`}
-            />
-          ))}
-        </div>
-
-        <button
-          type="button"
-          aria-label="Next"
-          onClick={() => goTo(index + 1)}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-border text-text-dark transition-colors hover:bg-cream-card"
-        >
-          <ArrowIcon direction="right" className="h-4 w-4" />
-        </button>
       </div>
     </section>
   );

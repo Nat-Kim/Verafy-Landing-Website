@@ -5,10 +5,10 @@ export default function Hero() {
   return (
     <section className="flex flex-col justify-center bg-cream px-6 py-16 text-center lg:min-h-[1045px]">
       <div className="mx-auto flex w-full max-w-[790px] flex-col items-center">
-        <p className="text-xs font-medium tracking-[0.15em] text-orange">
+        <p className="font-plex-mono text-[16px] font-medium leading-[120%] tracking-0 text-[#EB712F]">
           TRESA COMPLIANCE FOR ONTARIO AGENTS
         </p>
-        <h1 className="mt-6 text-[80px] font-medium leading-[1.1] tracking-tight text-text-dark">
+        <h1 className="font-jakarta mt-6 text-[80px] font-medium leading-[110%] tracking-[-0.06%] text-[#1C1714]">
           Every OREA form
           <br />
           checked in minutes
@@ -33,7 +33,7 @@ export default function Hero() {
             buttonClassName="h-12 whitespace-nowrap bg-orange text-white hover:bg-orange-dark"
           />
         </div>
-        <p className="mt-3 text-[11px] tracking-[0.1em] text-text-gray">
+        <p className="font-plex-mono mt-3 text-[14px] font-normal leading-[100%] tracking-0 text-[#8C8178]">
           FREE DURING BETA. NO CREDIT CARD REQUIRED.
         </p>
       </div>

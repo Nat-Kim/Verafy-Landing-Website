@@ -24,6 +24,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-jakarta: var(--font-plus-jakarta-sans);
+  --font-plex-mono: var(--font-ibm-plex-mono);
 
   --color-cream: var(--cream);
   --color-cream-card: var(--cream-card);

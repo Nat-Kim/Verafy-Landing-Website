@@ -26,10 +26,10 @@ export default function ProblemSection() {
   return (
     <section className="flex flex-col justify-center bg-[#0031AA] px-6 py-24 lg:min-h-[1045px]">
       <div className="mx-auto w-full max-w-[1228px] text-center " >
-        <p className="text-xs text-[16px] leading-tight tracking-tight text-white">
+        <p className="font-plex-mono text-[16px] font-medium leading-[120%] tracking-0 text-[#FBF8F5]">
           CURRENT PROBLEM
         </p>
-        <h2 className="mt-6 text-[48px] leading-tight tracking-tight text-white">
+        <h2 className="font-jakarta mt-6 text-[48px] font-medium leading-[110%] tracking-[-0.06%] text-[#FBF8F5]">
           Ontario agents navigate TRESA
           <br />
           requirements by hand — with no
@@ -45,10 +45,10 @@ export default function ProblemSection() {
             className="flex h-[402px] w-[380px] flex-col items-center rounded-2xl bg-[#FBF8F5] px-6 py-10 text-center"
           >
             {card.graphic}
-            <p className="mt-6 text-lg font-medium text-text-dark">
+            <p className="font-jakarta mt-6 text-[28px] font-medium text-[#2C2521]">
               {card.title}
             </p>
-            <p className="mt-2 text-sm text-text-gray">{card.body}</p>
+            <p className="font-plex-mono mt-2 text-[15px] text-[#6B6058]">{card.body}</p>
           </div>
         ))}
       </div>
