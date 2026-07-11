@@ -27,28 +27,28 @@ export default function WhyVerafy() {
   return (
     <section
       id="why-verafy"
-      className="flex flex-col justify-center bg-[#FBF8F5] px-6 py-24 lg:min-h-[1045px]"
+      className="flex flex-col justify-center bg-[#FBF8F5] px-4 py-16 sm:px-6 sm:py-24 lg:min-h-[1045px]"
     >
-      <div className="mx-auto w-full max-w-[998px] min-h-[162px] text-center">
-        <p className="text-[16px] font-medium tracking-[0.15em] text-orange">
+      <div className="mx-auto w-full max-w-[998px] text-center">
+        <p className="text-[13px] font-medium tracking-[0.15em] text-orange sm:text-[16px]">
           WHY VERAFY
         </p>
 
-        <h2 className="mt-6 font-jakarta text-[48px] font-medium tracking-tight text-text-dark">
+        <h2 className="mt-6 font-jakarta text-[28px] font-medium tracking-tight text-text-dark sm:text-[36px] lg:text-[48px]">
           Built for the way you actually work
         </h2>
 
-        <p className="mx-auto mt-4 w-[384px] min-h-[58px] text-[18px] leading-7 text-text-gray">
+        <p className="mx-auto mt-4 w-full max-w-[384px] text-[16px] leading-7 text-text-gray sm:text-[18px]">
           Verafy understands your forms, your rules, and your judgment — not
           just your file uploads.
         </p>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-[998] max-h-[586] gap-6 sm:grid-cols-2">
+      <div className="mx-auto mt-10 grid max-w-[998px] gap-6 sm:mt-12 sm:grid-cols-2">
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="grid w-full min-h-[281px] rounded-2xl bg-[#F4EFEA] card p-8"
+            className="grid w-full rounded-2xl bg-[#F4EFEA] card p-6 sm:min-h-[281px] sm:p-8"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange text-white">
               <feature.icon className="h-5 w-5" />

@@ -31,24 +31,24 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="flex flex-col items-center justify-center bg-[#FBF8F5] px-6 py-24"
+      className="flex flex-col items-center justify-center bg-[#FBF8F5] px-4 py-16 sm:px-6 sm:py-24"
     >
-      <div className="mx-auto flex w-[790px] max-w-full flex-col items-center gap-12 lg:h-[814px]">
-        <div className="flex h-[162px] w-full flex-col items-center gap-4 text-center">
-          <p className="px-[52px] font-plex-mono text-[16px] font-medium leading-[120%] tracking-[0] text-[#EB712F]">
+      <div className="mx-auto flex w-[790px] max-w-full flex-col items-center gap-8 sm:gap-12 lg:h-[814px]">
+        <div className="flex w-full flex-col items-center gap-4 text-center">
+          <p className="font-plex-mono text-[13px] font-medium leading-[120%] tracking-[0] text-[#EB712F] sm:px-[52px] sm:text-[16px]">
             HOW IT WORKS
           </p>
-          <h2 className="font-jakarta text-[48px] font-medium leading-[110%] tracking-[-0.06%] text-[#1C1714]">
+          <h2 className="font-jakarta text-[28px] font-medium leading-[120%] tracking-[-0.06%] text-[#1C1714] sm:text-[36px] lg:text-[48px]">
             Checked against every TRESA rule
           </h2>
-          <p className="px-[52px] font-jakarta text-[18px] font-normal leading-[160%] tracking-[-0.03%] text-[#6B6058]">
+          <p className="font-jakarta text-[16px] font-normal leading-[160%] tracking-[-0.03%] text-[#6B6058] sm:px-[52px] sm:text-[18px]">
             Verafy reads every form in your transaction, spots any TRESA
             issues, and tells you exactly what needs attention, turning hours
             of manual review into five minutes.
           </p>
         </div>
 
-        <div className="flex w-[569px] max-w-full flex-col items-center gap-12 lg:h-[604px]">
+        <div className="flex w-[569px] max-w-full flex-col items-center gap-8 sm:gap-12 lg:h-[604px]">
           <div className="w-full overflow-hidden rounded-2xl ">
             <div className="relative aspect-[569/504] w-full overflow-hidden">
               <div

@@ -32,15 +32,15 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="flex flex-col items-center justify-center bg-[#FBF8F5] px-6 py-24"
+      className="flex flex-col items-center justify-center bg-[#FBF8F5] px-4 py-16 sm:px-6 sm:py-24"
     >
       <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-center lg:h-[714px]">
         <div className="mx-auto w-full max-w-[1280px]">
-          <h2 className="text-[32px] font-semibold leading-[120%] tracking-[-0.03] text-[#2C2521]">
+          <h2 className="text-[26px] font-semibold leading-[120%] tracking-[-0.03] text-[#2C2521] sm:text-[32px]">
             FAQ
           </h2>
 
-          <div className="mt-12 divide-y divide-cream-border border-b border-cream-border">
+          <div className="mt-8 divide-y divide-cream-border border-b border-cream-border sm:mt-12">
             {faqs.map((faq, i) => {
               const open = openIndex === i;
               return (
@@ -48,9 +48,9 @@ export default function FAQ() {
                   <button
                     type="button"
                     onClick={() => setOpenIndex(open ? null : i)}
-                    className="flex w-full items-center justify-between py-6 text-left"
+                    className="flex w-full items-center justify-between gap-4 py-5 text-left sm:py-6"
                   >
-                    <h3 className="font-jakarta text-[24px] font-medium leading-[120%] tracking-[-0.03] text-[#1C1714]">
+                    <h3 className="font-jakarta text-[18px] font-medium leading-[120%] tracking-[-0.03] text-[#1C1714] sm:text-[24px]">
                       {faq.question}
                     </h3>
                     <PlusMinusIcon
@@ -63,7 +63,7 @@ export default function FAQ() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="max-w-lg pb-6 font-jakarta text-[20px] text-normal leading-[160%] tracking-[-0.03] text-[#1C1714]">
+                      <p className="max-w-lg pb-6 font-jakarta text-[16px] text-normal leading-[160%] tracking-[-0.03] text-[#1C1714] sm:text-[20px]">
                         {faq.answer}
                       </p>
                     </div>

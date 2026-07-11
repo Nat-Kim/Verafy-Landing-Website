@@ -1,6 +1,6 @@
 export function ManualReviewGraphic() {
   return (
-    <svg width="210" height="210" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
       <circle cx="105" cy="41.6667" r="8" fill="#1F9D6B" />
       <circle cx="105" cy="105" r="8" fill="#1F9D6B" />
       <circle cx="168.333" cy="105" r="8" fill="#1F9D6B" />
@@ -15,7 +15,7 @@ export function MultiFormErrorsGraphic() {
   const green = "#4a9d5f";
   const red = "#d1483a";
   return (
-    <svg width="210" height="210" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
       <circle cx="41.667" cy="41.6667" r="8" fill="#1F9D6B" />
       <circle cx="105" cy="41.6667" r="8" fill="#1F9D6B" />
       <circle cx="168.333" cy="41.6667" r="8" fill="#1F9D6B" />
@@ -37,7 +37,7 @@ export function RealConsequencesGraphic() {
   const orange = "#e15b28";
   const red = "#d1483a";
   return (
-    <svg width="210" height="210" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
       <circle cx="41.667" cy="105" r="8" fill="#1F9D6B" />
       <circle cx="105" cy="105" r="8" fill="#EB712F" />
       <circle cx="168.333" cy="105" r="8" fill="#D6453F" />
