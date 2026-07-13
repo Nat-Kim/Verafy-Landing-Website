@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import SubscribeForm from "./SubscribeForm";
+import { ROLES } from "./roles";
 
 const roles = [
-  { label: "Real estate agent", width: 196 },
-  { label: "Brokerage", width: 119 },
-  { label: "Investor / Other", width: 186 },
+  { label: ROLES[0], width: 196 },
+  { label: ROLES[1], width: 119 },
+  { label: ROLES[2], width: 186 },
 ];
 
 export default function WaitlistCTA() {
@@ -37,8 +38,8 @@ export default function WaitlistCTA() {
               onClick={() => setRole(label)}
               style={{ width }}
               className={`flex h-[35px] max-w-full items-center justify-center rounded-full bg-white font-plex-mono text-[16px] leading-[120%] tracking-[0] uppercase transition-colors ${role === label
-                  ? "text-[#B34B17] font-bold"
-                  : "text-[#6B6058] font-medium"
+                ? "text-[#B34B17] font-bold"
+                : "text-[#6B6058] font-medium"
                 }`}
             >
               {label}
