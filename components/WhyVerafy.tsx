@@ -48,15 +48,15 @@ export default function WhyVerafy() {
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="grid w-full rounded-2xl bg-[#F4EFEA] card p-6 sm:min-h-[281px] sm:p-8"
+            className="grid w-full min-h-[228px] rounded-2xl bg-[#F4EFEA] card p-6 sm:min-h-[281px] sm:p-8"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange text-white">
               <feature.icon className="h-5 w-5" />
             </span>
-            <p className="mt-0 text-[24px] font-medium leading-none text-text-dark">
+            <p className="mt-4 text-[24px] font-medium leading-none text-text-dark sm:mt-6">
               {feature.title}
             </p>
-            <p className="mt-0 text-[20px] leading-tight text-text-gray">
+            <p className="mt-2 text-[20px] leading-tight text-text-gray sm:mt-3">
               {feature.body}
             </p>
           </div>

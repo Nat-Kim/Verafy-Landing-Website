@@ -14,12 +14,17 @@ export default function DataSecurity() {
             Encrypted in transit and at rest. PIPEDA-aligned. Deletable on
             demand.
           </p>
+          <div className="flex justify-center py-8 sm:hidden">
+            <div className="h-[220px] w-[220px]">
+              <PadlockIllustration />
+            </div>
+          </div>
           <p className="font-ibm-plex-mono mt-8 text-[14px] font-normal tracking-[0] text-[#F4EFEA] sm:mt-10">
             VERAFY PROVIDES COMPLIANCE GUIDANCE, NOT LEGAL ADVICE.
           </p>
         </div>
-        <div className="order-1 flex justify-center sm:order-2">
-          <div className="h-[220px] w-[220px] sm:h-[320px] sm:w-[320px] lg:h-[512px] lg:w-[512px]">
+        <div className="order-1 hidden justify-center sm:order-2 sm:flex">
+          <div className="sm:h-[320px] sm:w-[320px] lg:h-[512px] lg:w-[512px]">
             <PadlockIllustration />
           </div>
         </div>
