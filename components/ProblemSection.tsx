@@ -36,11 +36,11 @@ export default function ProblemSection() {
         </h2>
       </div>
 
-      <div className="mx-auto mt-12 grid w-full max-w-[380px] gap-x-6 gap-y-8 sm:mt-16 sm:max-w-3xl sm:grid-cols-2 sm:gap-y-10 lg:w-fit lg:max-w-none lg:grid-cols-3 lg:gap-x-[44px] lg:gap-y-[64px]">
+      <div className="mx-auto mt-12 grid w-full max-w-[380px] grid-cols-1 gap-y-8 sm:mt-16 sm:max-w-3xl sm:gap-y-10 lg:max-w-[1228px] lg:grid-cols-3 lg:gap-x-[44px] lg:gap-y-[64px]">
         {cards.map((card) => (
           <div
             key={card.title}
-            className="flex h-full w-full flex-col items-center rounded-2xl bg-[#FBF8F5] px-6 py-8 text-center lg:h-[402px] lg:w-[380px] lg:py-10"
+            className="flex h-full w-full flex-col items-center rounded-2xl bg-[#FBF8F5] px-6 py-8 text-center lg:py-10"
           >
             <div className="h-[140px] w-[140px] sm:h-[210px] sm:w-[210px]">
               {card.graphic}

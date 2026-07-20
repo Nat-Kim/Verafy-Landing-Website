@@ -30,7 +30,7 @@ export default function WhyVerafy() {
       className="flex flex-col justify-center bg-[#FBF8F5] px-4 py-16 sm:px-6 sm:py-24 lg:min-h-[1045px]"
     >
       <div className="mx-auto w-full max-w-[998px] text-center">
-        <p className="text-[13px] font-medium tracking-[0.15em] text-orange sm:text-[16px]">
+        <p className="font-plex-mono  text-[13px] font-medium tracking-[0.15em] text-orange sm:text-[16px]">
           WHY VERAFY
         </p>
 

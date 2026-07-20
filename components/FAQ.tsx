@@ -63,7 +63,7 @@ export default function FAQ() {
                       }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="max-w-lg pb-6 font-jakarta text-[16px] text-normal leading-[160%] tracking-[-0.03] text-[#1C1714] sm:text-[20px]">
+                      <p className="w-full pb-6 font-jakarta text-[16px] text-normal leading-[160%] tracking-[-0.03] text-[#1C1714] sm:text-[20px]">
                         {faq.answer}
                       </p>
                     </div>

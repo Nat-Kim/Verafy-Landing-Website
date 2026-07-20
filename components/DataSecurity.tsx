@@ -19,7 +19,7 @@ export default function DataSecurity() {
               <PadlockIllustration />
             </div>
           </div>
-          <p className="font-ibm-plex-mono mt-8 text-[14px] font-normal tracking-[0] text-[#F4EFEA] sm:mt-10">
+          <p className="font-plex-mono mt-8 text-[14px] font-normal tracking-[0] text-[#F4EFEA] sm:mt-10">
             VERAFY PROVIDES COMPLIANCE GUIDANCE, NOT LEGAL ADVICE.
           </p>
         </div>
