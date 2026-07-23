@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowIcon } from "./icons";
 
@@ -23,10 +23,51 @@ const slides = [
   },
 ];
 
-export default function HowItWorks() {
-  const [index, setIndex] = useState(0);
+// Clone the last slide to the front and the first slide to the back so the
+// track can keep sliding in one direction and loop seamlessly.
+const extendedSlides = [slides[slides.length - 1], ...slides, slides[0]];
 
-  const goTo = (i: number) => setIndex((i + slides.length) % slides.length);
+export default function HowItWorks() {
+  const [index, setIndex] = useState(1);
+  const [isAnimating, setIsAnimating] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const isSnappingRef = useRef(false);
+
+  const activeDot = (index - 1 + slides.length) % slides.length;
+
+  const goTo = (i: number) => setIndex(i);
+  const step = (delta: number) => setIndex((i) => i + delta);
+
+  useEffect(() => {
+    if (isHovered) return;
+
+    const id = setInterval(() => step(1), 5000);
+    return () => clearInterval(id);
+  }, [isHovered]);
+
+  const handleTransitionEnd = () => {
+    if (isSnappingRef.current) return;
+
+    if (index === extendedSlides.length - 1) {
+      isSnappingRef.current = true;
+      setIsAnimating(false);
+      setIndex(1);
+    } else if (index === 0) {
+      isSnappingRef.current = true;
+      setIsAnimating(false);
+      setIndex(slides.length);
+    }
+  };
+
+  useEffect(() => {
+    if (isAnimating || !isSnappingRef.current) return;
+
+    const id = requestAnimationFrame(() => {
+      setIsAnimating(true);
+      isSnappingRef.current = false;
+    });
+    return () => cancelAnimationFrame(id);
+  }, [isAnimating]);
 
   return (
     <section
@@ -48,16 +89,22 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="flex w-[569px] max-w-full flex-col items-center gap-8 sm:gap-12 lg:h-[604px]">
+        <div
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="flex w-[569px] max-w-full flex-col items-center gap-8 sm:gap-12 lg:h-[604px]"
+        >
           <div className="w-full overflow-hidden rounded-2xl ">
             <div className="relative aspect-[569/504] w-full overflow-hidden">
               <div
-                className="flex h-full transition-transform duration-500 ease-out"
+                onTransitionEnd={handleTransitionEnd}
+                className={`flex h-full ${isAnimating ? "transition-transform duration-500 ease-out" : ""
+                  }`}
                 style={{ transform: `translateX(-${index * 100}%)` }}
               >
-                {slides.map((slide) => (
+                {extendedSlides.map((slide, i) => (
                   <div
-                    key={slide.src}
+                    key={`${slide.src}-${i}`}
                     className="relative h-full w-full shrink-0"
                   >
                     <Image
@@ -76,7 +123,7 @@ export default function HowItWorks() {
             <button
               type="button"
               aria-label="Previous"
-              onClick={() => goTo(index - 1)}
+              onClick={() => step(-1)}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-border text-text-dark transition-colors hover:bg-cream-card"
             >
               <ArrowIcon direction="left" className="h-4 w-4" />
@@ -88,8 +135,8 @@ export default function HowItWorks() {
                   key={slide.src}
                   type="button"
                   aria-label={`Go to slide ${i + 1}`}
-                  onClick={() => setIndex(i)}
-                  className={`h-1.5 w-1.5 rounded-full transition-colors ${i === index ? "bg-orange" : "bg-cream-border"
+                  onClick={() => goTo(i + 1)}
+                  className={`h-1.5 w-1.5 rounded-full transition-colors ${i === activeDot ? "bg-orange" : "bg-cream-border"
                     }`}
                 />
               ))}
@@ -98,7 +145,7 @@ export default function HowItWorks() {
             <button
               type="button"
               aria-label="Next"
-              onClick={() => goTo(index + 1)}
+              onClick={() => step(1)}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-border text-text-dark transition-colors hover:bg-cream-card"
             >
               <ArrowIcon direction="right" className="h-4 w-4" />

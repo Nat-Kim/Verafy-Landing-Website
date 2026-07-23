@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import SubscribeForm from "./SubscribeForm";
 import { ROLES } from "./roles";
+import { TownHouseGraphic } from "./TownHouseGraphics";
 
 const roles = [
   { label: ROLES[0], width: 196 },
@@ -28,13 +28,7 @@ export default function Hero() {
 
         <div className="mt-8 h-[240px] w-[240px] rounded-2xl bg-paper sm:h-[360px] sm:w-[360px] lg:mt-0 lg:h-[512px] lg:w-[512px]">
           <div className="relative h-full w-full">
-            <Image
-              src="/townhouses.svg"
-              alt="Illustration of townhouses"
-              fill
-              className="object-contain"
-              priority
-            />
+            <TownHouseGraphic />
           </div>
         </div>
         <p className="mt-0 font-jakarta text-[20px] font-normal leading-[100%] tracking-[-0.03%] text-[#6B6058] sm:mt-3 sm:text-[20px]">I am a... (select one)</p>
