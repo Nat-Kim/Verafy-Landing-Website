@@ -111,6 +111,7 @@ export default function HowItWorks() {
                       src={slide.src}
                       alt={slide.alt}
                       fill
+                      priority={i === 1}
                       className="object-contain"
                     />
                   </div>

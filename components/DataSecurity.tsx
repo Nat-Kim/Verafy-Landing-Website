@@ -2,7 +2,7 @@ import PadlockIllustration from "./PadlockIllustration";
 
 export default function DataSecurity() {
   return (
-    <section className="flex flex-col justify-center bg-ink px-4 py-16 sm:px-6 sm:py-24 lg:min-h-[800px]">
+    <section className="flex flex-col justify-center bg-[#1C1714] px-4 py-16 sm:px-6 sm:py-24 lg:min-h-[800px]">
       <div className="mx-auto grid max-w-5xl items-center gap-10 sm:grid-cols-2 sm:gap-12">
         <div className="order-2 w-full max-w-[485px] sm:order-1">
           <h2 className="text-[28px] font-jakarta font-medium leading-[120%] tracking-[-0.06em] text-[#F4EFEA] sm:text-[42px]">

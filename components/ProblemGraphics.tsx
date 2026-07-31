@@ -21,24 +21,22 @@ export function ManualReviewGraphic() {
 export function MultiFormErrorsGraphic() {
   const green = "#4a9d5f";
   const red = "#d1483a";
-  const lenLeft = 75;
-  const lenRight = 47;
+  const segLen = 45.333;
   return (
     <svg viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
       <circle cx="41.667" cy="41.6667" r="8" fill="#1F9D6B" />
       <circle cx="105" cy="41.6667" r="8" fill="#1F9D6B" />
       <circle cx="168.333" cy="41.6667" r="8" fill="#1F9D6B" />
       <circle cx="41.667" cy="105" r="8" fill="#D6453F" />
-      <circle cx="105" cy="105" r="8" fill="#1F9D6B" />
       <circle cx="168.333" cy="105" r="8" fill="#1F9D6B" />
       <circle cx="41.667" cy="168.333" r="8" fill="#1F9D6B" />
-      <circle cx="105" cy="168.333" r="8" fill="#D6453F" opacity="0">
+      <circle cx="105" cy="105" r="8" fill="#D6453F" opacity="0">
         <animate
           attributeName="opacity"
           from="0"
           to="1"
           dur="0.01s"
-          begin="mfeL1Draw.end"
+          begin="mfeADraw.end"
           fill="freeze"
         />
         <animate
@@ -46,7 +44,25 @@ export function MultiFormErrorsGraphic() {
           from="1"
           to="0"
           dur="0.01s"
-          begin="mfeL1Reset.end"
+          begin="mfeAReset.end"
+          fill="freeze"
+        />
+      </circle>
+      <circle cx="105" cy="168.333" r="8" fill="#D6453F" opacity="0">
+        <animate
+          attributeName="opacity"
+          from="0"
+          to="1"
+          dur="0.01s"
+          begin="mfeBDraw.end"
+          fill="freeze"
+        />
+        <animate
+          attributeName="opacity"
+          from="1"
+          to="0"
+          dur="0.01s"
+          begin="mfeBReset.end"
           fill="freeze"
         />
       </circle>
@@ -56,7 +72,7 @@ export function MultiFormErrorsGraphic() {
           from="0"
           to="1"
           dur="0.01s"
-          begin="mfeL2Draw.end"
+          begin="mfeCDraw.end"
           fill="freeze"
         />
         <animate
@@ -64,63 +80,91 @@ export function MultiFormErrorsGraphic() {
           from="1"
           to="0"
           dur="0.01s"
-          begin="mfeL2Reset.end"
+          begin="mfeCReset.end"
           fill="freeze"
         />
       </circle>
       <line
-        x1="47.367"
-        y1="110.16"
-        x2="98.367"
-        y2="165.16"
+        x1="50.667"
+        y1="105"
+        x2="96"
+        y2="105"
         stroke="#8C8178"
-        strokeDasharray={lenLeft}
-        strokeDashoffset={lenLeft}
+        strokeDasharray={segLen}
+        strokeDashoffset={segLen}
       >
         <animate
-          id="mfeL1Draw"
+          id="mfeADraw"
           attributeName="stroke-dashoffset"
-          from={lenLeft}
+          from={segLen}
           to="0"
-          dur="0.45s"
-          begin="0s;mfeL2Reset.end"
+          dur="0.4s"
+          begin="0s;mfeCReset.end"
           fill="freeze"
         />
         <animate
-          id="mfeL1Reset"
+          id="mfeAReset"
           attributeName="stroke-dashoffset"
           from="0"
-          to={lenLeft}
+          to={segLen}
           dur="0.01s"
-          begin="mfeL2Draw.end+0.7s"
+          begin="mfeCDraw.end+1s"
           fill="freeze"
         />
       </line>
       <line
-        x1="113"
-        y1="168"
-        x2="160"
-        y2="168"
+        x1="105"
+        y1="114"
+        x2="105"
+        y2="159.333"
         stroke="#8C8178"
-        strokeDasharray={lenRight}
-        strokeDashoffset={lenRight}
+        strokeDasharray={segLen}
+        strokeDashoffset={segLen}
       >
         <animate
-          id="mfeL2Draw"
+          id="mfeBDraw"
           attributeName="stroke-dashoffset"
-          from={lenRight}
+          from={segLen}
           to="0"
-          dur="0.3s"
-          begin="mfeL1Draw.end"
+          dur="0.4s"
+          begin="mfeADraw.end"
           fill="freeze"
         />
         <animate
-          id="mfeL2Reset"
+          id="mfeBReset"
           attributeName="stroke-dashoffset"
           from="0"
-          to={lenRight}
+          to={segLen}
           dur="0.01s"
-          begin="mfeL1Reset.end"
+          begin="mfeAReset.end"
+          fill="freeze"
+        />
+      </line>
+      <line
+        x1="114"
+        y1="168.333"
+        x2="159.333"
+        y2="168.333"
+        stroke="#8C8178"
+        strokeDasharray={segLen}
+        strokeDashoffset={segLen}
+      >
+        <animate
+          id="mfeCDraw"
+          attributeName="stroke-dashoffset"
+          from={segLen}
+          to="0"
+          dur="0.4s"
+          begin="mfeBDraw.end"
+          fill="freeze"
+        />
+        <animate
+          id="mfeCReset"
+          attributeName="stroke-dashoffset"
+          from="0"
+          to={segLen}
+          dur="0.01s"
+          begin="mfeBReset.end"
           fill="freeze"
         />
       </line>

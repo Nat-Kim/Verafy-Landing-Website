@@ -41,7 +41,7 @@ export default function Hero() {
               style={{ width }}
               className={`flex h-[35px] max-w-full items-center justify-center rounded-full border-2 bg-white font-plex-mono text-[16px] leading-[120%] tracking-[0] uppercase transition-colors ${role === label
                 ? "border-[#B34B17] text-[#B34B17] font-bold"
-                : "border-transparent text-[#6B6058] font-medium"
+                : "border-transparent text-[#6B6058] font-medium hover:border hover:border-[#6B6058] hover:bg-[#F4EFEA]"
                 }`}
             >
               {label}

@@ -39,7 +39,7 @@ export default function WaitlistCTA() {
               style={{ width }}
               className={`flex h-[35px] max-w-full items-center justify-center rounded-full border-2 bg-white font-plex-mono text-[16px] leading-[120%] tracking-[0] uppercase transition-colors ${role === label
                 ? "border-[#B34B17] text-[#B34B17] font-bold"
-                : "border-transparent text-[#6B6058] font-medium"
+                : "border-transparent text-[#6B6058] font-medium hover:border hover:border-[#6B6058] hover:bg-[#F4EFEA]"
                 }`}
             >
               {label}
@@ -52,7 +52,7 @@ export default function WaitlistCTA() {
             role={role}
             formClassName="flex w-full max-w-[582px] flex-col items-stretch gap-3 sm:flex-row"
             inputClassName="h-12 w-full flex-1 border border-white/0 bg-white text-text-dark placeholder:text-text-gray"
-            buttonClassName="flex h-12 w-full items-center justify-center bg-ink text-white hover:bg-black sm:w-[165px]"
+            buttonClassName="flex h-12 w-full items-center justify-center bg-ink text-white hover:bg-[#4A413B] sm:w-[165px]"
           />
         </div>
       </div>

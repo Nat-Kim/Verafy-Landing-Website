@@ -57,6 +57,7 @@ export default function Header() {
           </nav>
           <a
             href="#waitlist"
+            onClick={(e) => handleAnchorClick(e, "#waitlist")}
             className="font-jakarta rounded-md bg-orange px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-dark sm:px-5"
           >
             Join the waitlist
